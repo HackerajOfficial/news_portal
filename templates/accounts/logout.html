@@ -1,0 +1,42 @@
+{% extends "partials/layout.html" %}
+
+{% block title %}
+{{content}}
+{% endblock title %}
+
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+
+{% block breakingnews %}
+    {% include "partials/breakingnews.html" %}
+{% endblock breakingnews %}
+
+
+    
+{% block allnews %}
+   <div class="container">
+        <div class="col-md-6">
+            <p>You are logout Successfully. <a href="{% url 'login' %}"> Login Again</a></p>
+            <p>Back to <a href="{% url 'index' %}">Home</a></p>
+        </div>
+   </div>
+{% endblock allnews %}
+
+
+
+{% block topnews %}
+{% include "partials/topnews.html" %}
+{% endblock topnews %}
+
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+
+{% block script %}
+    {% include "partials/script.html" %}
+{% endblock script %}

@@ -1,0 +1,47 @@
+{% extends "partials/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+{{content}}
+{% endblock title %}
+
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+
+{% block breakingnews %}
+    {% include "partials/breakingnews.html" %}
+{% endblock breakingnews %}
+
+
+    
+{% block allnews %}
+<form method="POST">
+    {% csrf_token %}
+        <div class="col-md-3" style="align-items:center;">
+                {{ form|crispy }} 
+                <button type="submit" class="btn btn-info">Login</button>
+            </div>
+</form>
+
+
+   
+{% endblock allnews %}
+
+
+
+{% block topnews %}
+{% include "partials/topnews.html" %}
+{% endblock topnews %}
+
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+
+{% block script %}
+    {% include "partials/script.html" %}
+{% endblock script %}

@@ -1,0 +1,55 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+{% if error %}
+{{ error }}
+{% endif %}
+
+<div class="container">
+		<div class="row">
+			<div class="col-md-4 centered">
+				{% if error %}
+				{{ error }}
+				{% endif %}
+				<form action="{% url 'signup' %}" method="post" name="signup" id="signup">
+					{% csrf_token %}
+					<h2>Create an  Account</h2>
+					<hr class="colorgraph">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="mobile"  placeholder="Mobile Number" name="mobile">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+					</div><div class="form-group">
+						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+					</div>
+
+					<input type="submit" class="btn btn-primary" value="Creat a New Account">
+				</form>
+				<br />
+				<form enctype="multipart/form-data" method="POST">
+					{% csrf_token %}
+					Already have an account?
+					<a class="btn btn-outline-success" href="{% url 'login' %}" style="margin-left: 10px">Login</a>
+
+				</form>
+			</div>
+
+
+		</div>
+
+
+	</div>
+{% endblock %}
