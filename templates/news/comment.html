@@ -1,0 +1,23 @@
+{% for comment in comments %}
+
+
+ <li class="single_comment_area">
+    <!-- Comment Content -->
+    <div class="comment-content d-flex">
+        <!-- Comment Author -->
+        <div class="comment-author">
+            <img src="img/bg-img/32.jpg" alt="author">
+        </div>
+        <!-- Comment Meta -->
+        <div class="comment-meta">
+            <div class="d-flex">
+                <a href="#" class="post-author">{{ comment.commentor }}</a>
+                <a href="#" class="post-date">{{ comment.created_at }}</a>
+            </div>
+            <p>{{ comment.feedback }}</p>
+        </div>
+    </div>
+</li>
+
+    
+{% endfor %}

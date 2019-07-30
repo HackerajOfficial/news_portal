@@ -8,7 +8,7 @@
                 <nav class="classy-navbar justify-content-between" id="newsboxNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+                    <a href="{% url 'index' %}" class="nav-brand"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -74,7 +74,7 @@
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'index' %}">Home</a></li>
-                                        <li><a href="{% url 'catagory' %}">Catagory</a></li>
+                                        <li><a href="{% url 'category' %}">Category</a></li>
                                         <li><a href="{% url 'singlepost' %}">Single Post</a></li>
                                         <li><a href="{% url 'contact' %}">Contact</a></li>
                                         <li><a href="{% url 'elements' %}">Elements</a></li>
@@ -97,6 +97,10 @@
                             <!-- Header Add Area -->
                             <div class="header-add-area">
                                 {% if request.user.is_authenticated %}
+                                <a href="{% url 'create_news' %}">
+                                    <button type="button" class="btn btn-primary">Create News</button>
+                                
+                                </a>
                                 <a href="{% url 'logout' %}">
                                     <button type="button" class="btn btn-primary">Logout</button>
                                 
@@ -107,7 +111,7 @@
                                     <button type="button" class="btn btn-primary">Login</button>
                                     
                                 </a>
-                                <a href="{% url 'login' %}">
+                                <a href="{% url 'signup' %}">
                                     <button type="button" class="btn btn-primary">Signup</button>
                                 </a>
                                 {% endif %}
